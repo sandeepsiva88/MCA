@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flood Hut</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- icon -->
+  <link rel="icon" href="images/logo.png">
+  <!-- Bootstrap Links -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- js -->
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <section>
+        <div class="wizard">
+          <div class="wizard-inner">
+            <div class="connecting-line"></div>
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active" role="presentation"><a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1"><span class="round-tab"><i class="glyphicon glyphicon-lock"></i></span></a></li>
+              <li class="disabled" role="presentation"><a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2"><span class="round-tab"><i class="glyphicon glyphicon-home"></i></span></a></li>
+              <li class="disabled" role="presentation"><a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3"><span class="round-tab"><i class="glyphicon glyphicon-picture"></i></span></a></li>
+              <li class="disabled" role="presentation"><a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete"><span class="round-tab"><i class="glyphicon glyphicon-ok"></i></span></a></li>
+            </ul>
+          </div>
+          <form role="form">
+            <div class="tab-content">
+              <div class="tab-pane active" id="step1" role="tabpanel" style="background-image: url('./images/logo.jpeg'); background-repeat: no-repeat;background-size: cover;">
+                <div class="pen-title">
+                  <h1>Login Form</h1>
+                </div>
+                <!-- Form Module-->
+                <div class="module form-module">
+                  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+                    <div class="tooltip">Click Me</div>
+                  </div>
+                  <div class="form">
+                    <h2>Login to your account</h2>
+                    <form>
+                      <input type="text" placeholder="Username"/>
+                      <input type="password" placeholder="Password"/>
+                      <button class="btn btn-primary next-step" type="button">Login</button>
+                    </form>
+                  </div>
+                  <div class="form">
+                    <h2>Create an account</h2>
+                    <form>
+                      <input type="text" placeholder="Username"/>
+                      <input type="password" placeholder="Password"/>
+                      <input type="email" placeholder="Email Address"/>
+                      <input type="tel" placeholder="Phone Number"/>
+                      <button>Register</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="step2" role="tabpanel" style="background-image: url('./images/logo.jpeg'); background-repeat: no-repeat;background-size: cover;">
+                <div class="center">
+                  <h1 style="color: white">Welcome to BHP Attacks</h1>
+                  <p style="color: white">The Optical Burst Switching (OBS) network is mostly victimized to the Denial of Service (DOS) attack, referred as Burst Header Packet (BHP) flooding attack can prevent reasonable traffics from keeping the necessary resources at transitional core nodes.</p>
+                  <button class="btn btn-primary btn-info-full next-step" type="button">Get Started</button>
+                </div>
+              </div>
+              <div class="tab-pane" id="step3" role="tabpanel">
+                <div class="row col-md-12">
+                  <img src="images/2.jpg" style="height: 550px; width:100%; margin-left: 15px;">
+                </div>
+                <div class="row col-md-12">
+                  <center>
+                    <button class="btn btn-primary btn-info-full next-step" type="button">Go To Home</button>
+                  </center>
+                </div>
+              </div>
+              <div class="tab-pane" id="complete" role="tabpanel" style="background-image: url('./images/logo.jpeg'); background-repeat: no-repeat;background-size: cover; color: white;">
+                <h1 class="text-center">Flood Attacks In OBS Networks</h1>
+                  <form action="{{url_for('predict')}}" method="POST">
+                    <div class="col-md-4 col-md-offset-1">
+                    <p>
+                      <b>Node:</b>
+                      <input class="form-control" type="text" value="" name="Node"> </p>
+                      <b>Utilized Bandwidth Rate:</b>
+                      <input class="form-control" type="text" value="" name="Utilized_Bandwidth_Rate"> </p>
+                      <b>Packet Drop Rate:</b>
+                      <input class="form-control" type="text" value="" name="Packet_Drop_Rate"> </p>
+                      <p>
+                        <b>Full_Bandwidth:</b>
+                        <select class="form-control" name="Reserved_Bandwidth">
+                          <option value="100">100</option>
+                          <option value="200">200</option>
+                          <option value="300">300</option>
+                          <option value="400">400</option>
+                          <option value="500">500</option>
+                          <option value="600">600</option>
+                          <option value="700">700</option>
+                          <option value="800">800</option>
+                          <option value="900">900</option>
+                          <option value="1000">1000</option>
+                        </select>
+                      </p>
+                      <p>
+                        <b>Average_Delay_Time_Per_Sec:</b>
+                        <input class="form-control" type="text" value="" name="Average_Delay_Time_Per_Sec">
+                      </p>
+                      <p>
+                        <b>Percentage_Of_Lost_Packet_Rate:</b>
+                        <input class="form-control" type="text" value="" name="Percentage_Of_Lost_Packet_Rate">
+                      </p>
+                      <p>
+                        <b>Percentage_Of_Lost_Byte_Rate:</b>
+                        <input class="form-control" type="text" value="" name="Percentage_Of_Lost_Byte_Rate">
+                      </p>
+                      <p>
+                        <b>Packet Received Rate:</b>
+                        <input class="form-control" type="text" value="" name="Packet_Received_Rate">
+                      </p>
+                      <p>
+                        <b>Used_Bandwidth:</b>
+                        <input class="form-control" type="text" value="" name="Used_Bandwidth">
+                      </p>
+                    </div>
+                    <div class="col-md-4 col-md-offset-1">
+                      <p>
+                        <b>Lost_Bandwidth:</b>
+                        <input class="form-control" type="text" value="" name="Lost_Bandwidth">
+                      </p>
+                      <p>
+                        <b>Packet Size_Byte:</b>
+                        <select class="form-control" name="Packet_Size_Byte">
+                          <option value="1440">1440</option>
+                        </select>
+                      </p>
+                      <p>
+                        <b>Packet_Transmitted:</b>
+                        <input type="text" class="form-control" value="" name="Packet_Transmitted">
+                      </p>
+                      <p>
+                        <b>Packet_Received:</b>
+                        <input type="text" class="form-control" value="" name="Packet_Received">
+                      </p>
+                      <p>
+                        <b>Packet_lost:</b>
+                        <input type="text" class="form-control" value="" name="Packet_lost">
+                      </p>
+                      <p>
+                        <b>Transmitted_Byte:</b>
+                        <select name="Transmitted_Byte" class="form-control">
+                          <option value="117037440">117037440</option>
+                          <option value="26058240">26058240</option>
+                          <option value="13029120">13029120</option>
+                          <option value="104008320">104008320</option>
+                          <option value="91128960">91128960</option>
+                          <option value="52041600">52041600</option>
+                          <option value="78024960">78024960</option>
+                          <option value="65070720">65070720</option>
+                          <option value="130066560">130066560</option>
+                          <option value="39012480">39012480</option>
+                        </select>
+                      </p>
+                      <p>
+                        <b>Received_Byte:</b>
+                        <input type="text" class="form-control" value="" name="Received_Byte">
+                      </p>
+                      <p><b>Node Status:</b>
+                        <select class="form-control" name="Node_Status">
+                          <option value="0">B</option>
+                          <option value="1">NB</option>
+                          <option value="2">P NB</option>
+                        </select>
+                      </p>
+                      <p>
+                        <b>Flood Status:</b>
+                        <input class="form-control" type="text" value="" name="Flood_Status">
+                      </p>
+                    </div>
+                    <div class="row col-md-12"> 
+                    <center>
+                      <input class="btn btn-primary btn-info-full next-step" type="Submit">
+                    </center>
+                    </div>
+                  </form>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
